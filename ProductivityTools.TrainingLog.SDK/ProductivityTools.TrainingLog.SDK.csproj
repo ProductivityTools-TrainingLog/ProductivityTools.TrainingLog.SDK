@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.0.1</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/ProductivityTools-TrainingLog/ProductivityTools.TrainingLog.SDK</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
