@@ -11,8 +11,6 @@ namespace ProductivityTools.TrainingLog.SDK.Tests
         [TestMethod]
         public void PostTraining()
         {
-            
-
             Training training = new Training();
             training.Application = "SDK";
             training.Account = "SDK1";
@@ -27,9 +25,11 @@ namespace ProductivityTools.TrainingLog.SDK.Tests
             training.AverageSpeed = 11;
             //training.Pictures=//
 
-
             TrainingLog trainingLog = new TrainingLog(ApiAdress);
             trainingLog.PostTraining(training);
+
+            var trainingList = trainingLog.TrainingList("SDK1");
+            Assert.IsTrue(trainingList.Count > 0);
         }
     }
 }
