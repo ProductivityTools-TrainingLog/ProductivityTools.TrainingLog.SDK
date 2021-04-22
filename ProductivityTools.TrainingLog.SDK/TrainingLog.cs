@@ -21,9 +21,14 @@ namespace ProductivityTools.TrainingLog.SDK
             Console.WriteLine(result2);
         }
 
-        public List<Training> TrainingList(string account)
+        public List<Training> TrainingList(string account, DateTime? fromDate = null)
         {
-            var result2 = Client.PostAsync<List<Training>>("Training", "List", account).Result;
+            string address = string.Format($"List/?account={account}");
+            if (fromDate.HasValue)
+            {
+                address=$"{address}&fromDate={fromDate.Value.Date.ToString("yyyy.MM.dd")}";
+            }
+            var result2 = Client.PostAsync<List<Training>>("Training", address, null).Result;
             return result2;
         }
     }
