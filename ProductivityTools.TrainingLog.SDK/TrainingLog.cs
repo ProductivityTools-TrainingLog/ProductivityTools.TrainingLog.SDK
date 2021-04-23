@@ -9,9 +9,9 @@ namespace ProductivityTools.TrainingLog.SDK
     {
         private HttpPostClient Client { get; set; }
 
-        public TrainingLog(string trainingLogAddress)
+        public TrainingLog(string trainingLogAddress, bool logging)
         {
-            Client = new HttpPostClient(true);
+            Client = new HttpPostClient(logging);
             Client.SetBaseUrl(trainingLogAddress);
         }
 

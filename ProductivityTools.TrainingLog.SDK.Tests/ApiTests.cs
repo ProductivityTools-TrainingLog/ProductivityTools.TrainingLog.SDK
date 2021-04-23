@@ -26,7 +26,7 @@ namespace ProductivityTools.TrainingLog.SDK.Tests
             training.ExternalIdList = new System.Collections.Generic.Dictionary<string, string>();
             //training.Pictures=//
 
-            TrainingLog trainingLog = new TrainingLog(ApiAdress);
+            TrainingLog trainingLog = new TrainingLog(ApiAdress, true);
             trainingLog.PostTraining(training);
 
             var trainingList = trainingLog.TrainingList("SDK1");
@@ -36,8 +36,8 @@ namespace ProductivityTools.TrainingLog.SDK.Tests
         [TestMethod]
         public void ListOfTrainingsFromDate()
         {
-            TrainingLog trainingLog = new TrainingLog(ApiAdress);
-            var trainings=trainingLog.TrainingList("SDK1", DateTime.Now.AddYears(-1));
+            TrainingLog trainingLog = new TrainingLog(ApiAdress, true);
+            var trainings = trainingLog.TrainingList("SDK1", DateTime.Now.AddYears(-1));
         }
     }
 }
